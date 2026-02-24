@@ -1,6 +1,3 @@
-
-import { generateRandomColor } from '../shared/randomColor.js';
-
 let items = [];
 const itemDiv = document.getElementById("items")
 
@@ -83,3 +80,15 @@ document.addEventListener("DOMContentLoaded", loadItems)
 
 // expose `addItem` so inline `onclick="addItem()"` works when this file is loaded as a module
 window.addItem = addItem
+
+
+function generateRandomColor() {
+    const red = Math.round(Math.random() * 255)
+    const green = Math.round(Math.random() * 255)
+    const blue = Math.round(Math.random() * 255)
+    return `rgb(${red}, ${green}, ${blue})`
+}
+
+function randomColor() {
+    document.body.style.backgroundColor = generateRandomColor()
+}
